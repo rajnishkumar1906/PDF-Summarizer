@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*.class
+
+# Virtual environments
+venv/
+ENV/
+.venv/
+
+# Environment variables
+.env
+*.env
+
+# IDE folders
+.vscode/
+.idea/
+
+# Build and dist
+build/
+dist/
+*.egg-info/
+
+# pytest
+.pytest_cache/
+
+# Logs and outputs
+*.log
+outputs/
+
+# Misc
+*.swp
