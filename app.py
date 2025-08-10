@@ -117,14 +117,16 @@ if uploaded_file:
         cleaned_text = clean_text(raw_text)
         chunks = chunk_text(cleaned_text, max_words=400)
 
-        # Take only first 2 chunks + last chunk replaced by Projects section
         st.write(f"🔢 Text split into **3** chunks (2 summaries + Projects section).")
 
         st.info("🤖 Summarizing first 2 chunks...")
         progress_bar = st.progress(0)
 
+        full_summary_text = ""
+
         for i in range(min(2, len(chunks))):
             summary = summarize_chunk(chunks[i])
+            full_summary_text += f"--- Summary for Chunk {i+1} ---\n{summary}\n\n"
             st.markdown(
                 f"""
                 <div class="summary-card">
@@ -138,7 +140,15 @@ if uploaded_file:
 
         progress_bar.empty()
 
-        # Show Projects section as last chunk
+        # Projects section as last chunk
+        projects_text = (
+            "Projects:\n"
+            "- Project Alpha: AI-driven PDF summarization tool\n"
+            "- Project Beta: Text cleaning and chunking enhancements\n"
+            "- Project Gamma: Integration with Gemini AI for smarter summaries\n"
+        )
+        full_summary_text += projects_text.replace("\n", "\n")
+
         st.markdown(
             """
             <div class="summary-card">
@@ -151,6 +161,14 @@ if uploaded_file:
             </div>
             """,
             unsafe_allow_html=True,
+        )
+
+        # Download button for summary text
+        st.download_button(
+            label="📥 Download Summary as TXT",
+            data=full_summary_text,
+            file_name="quicksum_summary.txt",
+            mime="text/plain",
         )
 
     else:
