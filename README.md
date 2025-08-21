@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-=======
 
 
-````markdown
->>>>>>> 55f5a6747faacce70e2036b1562a3f309d9aa9d2
 # 📄 PDF Summarizer using Google Gemini AI
 
 An AI-powered tool that extracts text from PDFs and generates **clear, concise summaries** using **Google's Gemini API**.
@@ -85,4 +81,3 @@ PDF-Summarizer/
 * Third most important point
 * Fourth most important point
 * Fifth most important point
->>>>>>> 55f5a6747faacce70e2036b1562a3f309d9aa9d2
