@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from utils.pdf_reader import extract_text_from_pdf
 from utils.text_processor import clean_text, chunk_text
-from utils.summarizer import summarize_chunk
+from utils.summarizer import 
 
 st.markdown(
     """
